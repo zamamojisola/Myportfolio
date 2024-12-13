@@ -3,6 +3,7 @@ import profilePicture from "../../assets/profile-picture.jpg"
 import Copyright from "../common/copyright";
 import Navbar from "../common/navbar";
 import tool from "./tools.js"
+import Button from "../common/button.jsx";
 
 
 
@@ -19,7 +20,7 @@ const Home = () => {
 
           <div className="w-[95%] h-[90%]  m-auto rounded-t-3xl bg-[#d5dff2] shadow-2xl shadow-blue-500">
 
-            <button className="mt-[2rem] hover:bg-[#825621] w-[7rem] border-l-0 rounded-r-2xl bg-[#3c527d]">Darkmode</button>
+            <Button title="Darkmode"/>
             
             <div className="flex justify-center gap-3 md:gap-0">
 
@@ -40,7 +41,7 @@ const Home = () => {
 
             </div>
 
-             <button className="mt-[1rem] hover:bg-[#825621] w-[7rem] border-l-0 rounded-r-2xl bg-[#3c527d]">Tools</button>
+             <Button title="Tools"/>
 
               <div className="w-[98%] min-h-[20%]  flex  flex-col md:flex-row m-auto mt-1 shadow-xl">
                  <div className=" w-[100%] md:w-[50%]  p-3 flex text-[#3c527d] justify-between">
@@ -55,7 +56,7 @@ const Home = () => {
                  </div>
               </div>
 
-              <button className="mt-[1rem] w-[7rem] hover:bg-[#825621] border-l-0 rounded-r-2xl bg-[#3c527d]">Journey</button>
+              <Button title="Journey"/>           
 
               <div className="min-h-[6rem] md:h-[6rem] flex flex-col md:flex-row md:items-center p-2 shadow-2xl"> 
                   <div className="w-fit min-h-[4rem] md:h-[4.5rem] bg-[#3c527d] text-[#d5dff2] rounded-lg p-2 leading-5">
