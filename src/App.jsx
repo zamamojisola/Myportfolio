@@ -1,12 +1,14 @@
 import './index.css'
-import Home from './pages/landindPage'
+import Projects from './pages/projectPgae'
+// import Home from './pages/landindPage'
 
 function App() {
  
 
   return (
     <>
-     <Home/>
+     <Projects/>
+    {/* <Home/> */}
     </>
   )
 
