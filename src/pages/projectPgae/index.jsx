@@ -1,7 +1,7 @@
 import Copyright from "../common/copyright";
-import Navbar from "../common/navbar";
 import "animate.css"
 import {projectList} from "./projects.js"
+
 
 
 
@@ -12,9 +12,8 @@ const Projects = () => {
 
     return (
       <>
-        <Navbar />
 
-        <div className="w-[97%] min-h-[33rem] font-[Oswald]  m-auto mt-5 rounded-2xl bg-[#3c527d]  p-5 text-[#3c527d] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4  gap-3">
+        <div className="w-[97%] min-h-[33rem] font-[Oswald]  m-auto mt-5 rounded-2xl bg-[#3c527d]  p-5 text-[#3c527d] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 shadow-2xl shadow-blue-300 gap-3">
           {
             projectList.map((ele) => (
               <div key={ele.id}  className="w-[95%] h-[30rem] border hover:border-[#825621] bg-[#d5dff2] [&_img]:hover:border-[#825621] p-4 rounded-xl flex flex-col justify-between animate__animated hover:animate-pulse">

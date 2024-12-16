@@ -1,7 +1,6 @@
 import { CgArrowLongRightR } from "react-icons/cg";
 import profilePicture from "../../assets/profile-picture.jpg"
 import Copyright from "../common/copyright";
-import Navbar from "../common/navbar";
 import tool from "./tools.js"
 import Button from "../common/button.jsx";
 
@@ -15,8 +14,6 @@ const Home = () => {
 
     return (
       <div className=" w-full min-h-screen md:h-screen bg-white font-[Oswald] text-[#d5dff2]">
-
-          <Navbar/>
 
           <div className="w-[95%] h-[90%]  m-auto rounded-t-3xl bg-[#d5dff2] shadow-2xl shadow-blue-500">
 
@@ -34,8 +31,8 @@ const Home = () => {
                   </div>  
 
                 <div className="border w-[40rem] h-fit bg-[#3c527d] rounded-3xl p-3">
-                  <p><h1 className=" text-[2.5rem] text-center">Hi i'm Zainab, a Software Engineer.</h1></p>
-                  <p><h3 className=" text-[2rem] text-center"> Frontend || Backend</h3></p>
+                  <h1 className=" text-[2.5rem] text-center">Hi i'm Zainab, a Software Engineer.</h1>
+                  <h3 className=" text-[2rem] text-center"> Frontend || Backend</h3>
                   <p className="text-end">-Zainab Arowojobe</p>
                 </div>
 
@@ -46,12 +43,12 @@ const Home = () => {
               <div className="w-[98%] min-h-[20%]  flex  flex-col md:flex-row m-auto mt-1 shadow-xl">
                  <div className=" w-[100%] md:w-[50%]  p-3 flex text-[#3c527d] justify-between">
                   {
-                    tools.map(ele => <div  key={ele.id} className="w-[6rem] h-[6rem] bg-[#d5dff2] rounded-3xl md:rounded-full p-1 flex flex-col items-center justify-between m-2"> <ele.icon className="text-[2.5rem] md:text-[3rem] text-[#825621]"/> <p>{ele.name}</p></div> )
+                    tools.map(ele => <div  key={ele.id} className="w-[6rem] h-[6rem] bg-[#d5dff2] hover:ring-8 rounded-3xl md:rounded-full p-1 flex flex-col items-center justify-between m-2"> <ele.icon className="text-[2.5rem] md:text-[3rem] text-[#825621]"/> <p>{ele.name}</p></div> )
                   }
                  </div>
-                 <div className=" w-[90%] md:w-[50%] p-3 flex justify-between bg-[#d5dff2]">
+                 <div className=" w-[90%] md:w-[50%] p-3 flex justify-between bg-[#d5dff2] ">
                     {
-                    tools2.map(ele => <div  key={ele.id} className="w-[6rem] h-[6rem] bg-[#3c527d]  rounded-3xl md:rounded-full p-1 flex flex-col items-center justify-between m-1"> < ele.icon className="text-[2.5rem] md:text-[3rem] text-[#825621]"/> <p>{ele.name}</p></div> )
+                    tools2.map(ele => <div  key={ele.id} className="w-[6rem] h-[6rem] bg-[#3c527d] hover:ring-8 rounded-3xl md:rounded-full p-1 flex flex-col items-center justify-between m-1"> < ele.icon className="text-[2.5rem] md:text-[3rem] text-[#825621]"/> <p>{ele.name}</p></div> )
                   }
                  </div>
               </div>
