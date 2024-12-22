@@ -3,6 +3,7 @@ import './index.css'
 import Projects from './pages/projectPgae'
 import Home from './pages/landindPage'
 import Navbar from './pages/common/navbar';
+import Contact from './pages/contactMePage';
 
 
 const router = createBrowserRouter(
