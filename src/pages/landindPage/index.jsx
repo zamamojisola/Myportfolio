@@ -3,21 +3,37 @@ import profilePicture from "../../assets/profile-picture.jpg"
 import Copyright from "../common/copyright";
 import tool from "./tools.js"
 import Button from "../common/button.jsx";
+import { useEffect, useState } from "react";
 
 
 
 
 const Home = () => {
 
+  const [darkmode, setDarkMode] = useState( localStorage.getItem("theme") === "dark" )
 
   const {tools,tools2} = tool
 
+useEffect(() => {
+  if (darkmode) {
+    document.documentElement.classList.add("dark");
+    localStorage.setItem("theme", "dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+    localStorage.setItem("theme", "light");
+  }
+}, [darkmode]);
+
+  function handleMode(){
+    setDarkMode(prevMode => !prevMode)
+  }
+
     return (
-      <div className=" w-full min-h-screen md:h-screen bg-white font-[Oswald] text-[#d5dff2]">
+      <div className=" w-full min-h-screen dark:bg-gray-800 bg-[#d5dff2] font-[Oswald] text-[#d5dff2] dark:text-gray-400">
 
-          <div className="w-[95%] h-[90%]  m-auto rounded-t-3xl bg-[#d5dff2] shadow-2xl shadow-blue-500">
+          <div className="w-[95%] h-[90%]  m-auto rounded-t-3xl bg-[#d5dff2] dark:bg-gray-800 shadow-2xl shadow-blue-500">
 
-            <Button title="Darkmode"/>
+            <Button onclick={handleMode} title={darkmode ? "LightMode":"Darkmode"}/>
             
             <div className="flex justify-center gap-3 md:gap-0">
 
@@ -43,12 +59,23 @@ const Home = () => {
               <div className="w-[98%] min-h-[20%]  flex  flex-col md:flex-row m-auto mt-1 shadow-xl">
                  <div className=" w-[100%] md:w-[50%]  p-3 flex text-[#3c527d] justify-between">
                   {
-                    tools.map(ele => <div  key={ele.id} className="w-[6rem] h-[6rem] bg-[#d5dff2] hover:ring-8 rounded-3xl md:rounded-full p-1 flex flex-col items-center justify-between m-2"> <ele.icon className="text-[2.5rem] md:text-[3rem] text-[#825621]"/> <p>{ele.name}</p></div> )
+                    tools.map(ele => 
+                    <div  key={ele.id} 
+                    className="w-[6rem] h-[6rem] bg-[#d5dff2] hover:ring-8 rounded-3xl md:rounded-full p-1 
+                              flex flex-col items-center justify-between m-2">
+                       <ele.icon className="text-[2.5rem] md:text-[3rem] text-[#825621]"/> 
+                       <p>{ele.name}</p>
+                       </div> )
                   }
                  </div>
-                 <div className=" w-[90%] md:w-[50%] p-3 flex justify-between bg-[#d5dff2] ">
+                 <div className=" w-[90%] md:w-[50%] p-3 flex justify-between  ">
                     {
-                    tools2.map(ele => <div  key={ele.id} className="w-[6rem] h-[6rem] bg-[#3c527d] hover:ring-8 rounded-3xl md:rounded-full p-1 flex flex-col items-center justify-between m-1"> < ele.icon className="text-[2.5rem] md:text-[3rem] text-[#825621]"/> <p>{ele.name}</p></div> )
+                    tools2.map(ele => 
+                    <div  key={ele.id} className="w-[6.5rem] h-[6.5rem] bg-[#3c527d] hover:ring-8 rounded-3xl 
+                    md:rounded-full p-1 flex flex-col items-center justify-between m-1"> 
+                    < ele.icon className="text-[2.5rem] md:text-[3rem] text-[#825621]"/> 
+                    <p>{ele.name}</p>
+                    </div> )
                   }
                  </div>
               </div>
