@@ -22,7 +22,7 @@ const Navbar = () => {
         <div  className={toggle ? " flex relative flex-col w-[10rem] justify-around p-3 rounded-lg mt-1 ring-4  h-[10rem] z-20 bg-[#3c527d]":"hidden md:flex md:w-[20rem] md:justify-around md:items-center"}>
           <div><NavLink className={({isActive}) => isActive && "text-[#825621] bg-[#d5dff2]"} to="/">Home</NavLink> </div>
           <div><NavLink className={({isActive}) => isActive && "text-[#825621] bg-[#d5dff2]" } to="projects">Projects</NavLink> </div>
-          <div><NavLink  className={({isActive}) => isActive && "text-[#825621] bg-[#d5dff2]"}to="contact me">Contact Me</NavLink></div>
+          <div><NavLink  className={({isActive}) => isActive && "text-[#825621] bg-[#d5dff2]"}to="contactme">Contact Me</NavLink></div>
           {toggle && <MdCancel className="md:hidden absolute top-4 right-0" onClick={handleToggle}/>}
         </div>
       </nav>

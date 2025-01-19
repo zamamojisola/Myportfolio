@@ -29,7 +29,9 @@ const Projects = () => {
               <p>{ele.preview}</p>
 
               <button className="w-full h-[3.5rem] hover:bg-[#825621] bg-[#3c527d] rounded-2xl text-[#d5dff2] ">
-                Github Link
+                <a href={ele.link} target="blank">
+                  Github Link
+                </a>
               </button>
             </div>
           ))}
