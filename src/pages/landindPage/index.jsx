@@ -62,7 +62,7 @@ useEffect(() => {
 
             <div className="border w-[40rem] h-fit bg-[#3c527d] rounded-3xl p-3">
               <h1 className=" text-[2.5rem] text-center">
-                Hi i'm Zainab, a Software Engineer.
+                Hi I'm Zainab, a Software Engineer.
               </h1>
               <h3 className=" text-[2rem] text-center"> Frontend || Backend</h3>
               <p className="text-end">-Zainab Arowojobe</p>

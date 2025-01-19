@@ -1,6 +1,7 @@
 import Copyright from "../common/copyright";
 import "animate.css"
 import {projectList} from "./projects.js"
+import Button from "../common/button.jsx";
 
 
 
@@ -25,6 +26,10 @@ const Projects = () => {
                   className="rounded-xl border-4 border-[#3c527d]"
                 />
               </div>
+
+              <button className=" text-[#d5dff2] hover:bg-[#825621] w-[5rem] border-l-0 rounded-r-2xl bg-[#3c527d] m-1">
+                {ele.title}
+              </button>
 
               <p>{ele.preview}</p>
 
