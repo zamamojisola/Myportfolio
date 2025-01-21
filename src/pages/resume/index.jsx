@@ -17,7 +17,7 @@ const Resume = () => {
           <img
             src={localStorage.getItem("theme") === "dark" ? resumeImage : resumeImg}
             alt="resume"
-            className="w-[30rem] h-[35rem] md:w-fit md:h-fit bg-cover rounded-2xl "
+            className="w-[30rem] h-[30rem] md:w-fit md:h-fit bg-cover rounded-2xl "
           />
         </div>
       </div>
