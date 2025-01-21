@@ -41,22 +41,19 @@ const Contact = () => {
      e.preventDefault()
 
      try {
-       const res = await axios.post(import.meta.env.VITE_URL, form,{headers: { "Content-Type": "application/json" }});
-      console.log(res)
-
-        if(res.data.ok){
-           setForm((prevform)=>({...prevform, user_name:"", user_email:"", message:""}));
-            alert("message sent to Zainab successful");
+       const res = await axios.post(import.meta.env.VITE_URL, form,  { headers: {'Accept': 'application/json'}})
+          
+        if(res.data.status == "200"){
+           setForm((prevform)=>({...prevform, user_name:"", user_email:"", message:""}))
+           alert("message sent to Zainab successful");
         }
+         
 
      } catch (error) {
-
-      const err = error?.status?.toString()
-          
-       if(err.startsWith("4") || err.startsWith("5")){
+      
         setForm({...form, user_email:"", user_name:"", message:""})
-        alert("unable to process message please try again later");
-       };
+       if(error.response || error.request)  alert("unable to process message please try again later");
+       
 
      }
 
