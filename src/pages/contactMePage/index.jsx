@@ -63,7 +63,7 @@ const Contact = () => {
    }
    
   return (
-    <div className="dark:bg-gray-800 border  bg-[#d5dff2] h-[37rem]">
+    <div className="dark:bg-gray-800 border  bg-[#d5dff2] min-h-[37rem]">
       <div className="w-[98%]  min-h-[32rem] m-auto bg-[#3c527d] my-6 rounded-xl shadow-xl shadow-[#3c527d] text-[#cbd8f1] font-[Oswald] flex gap-4 flex-col justify-center items-center">
         <div className="w-[80%] h-[85%] shadow-md shadow-[#3c527d] p-4 dark:bg-gray-800 bg-[#cbd8f1] rounded-2xl flex justify-around">
           <div className="w-[40%] p-4 hidden md:block">
