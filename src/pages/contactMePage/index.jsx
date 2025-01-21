@@ -3,14 +3,13 @@ import emailsvg from "../../assets/emailsvg.svg";
 import { FaLocationDot, FaPhone } from "react-icons/fa6";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
-// import emailjs from "@emailjs/browser";
 
 const Contact = () => {
 
    const [form, setForm] = useState({user_name: "", user_email:"", message: ""})
    const [error, setError] = useState({ user_name: "", user_email: "", message: "" });
-   const nameref= useRef()
 
+   const nameref= useRef()
 
     useEffect(() => {
       nameref.current.focus();
@@ -41,22 +40,11 @@ const Contact = () => {
 
      e.preventDefault()
 
-     const data = {
-       service_id: import.meta.env.VITE_serviceId,
-       template_id: import.meta.env.VITE_templateId,
-       user_id: import.meta.env.VITE_publicKey,
-       template_params: {
-         from_name: form.user_name,
-         from_email: form.user_email,
-         to_name: "Zainab Arowojobe",
-         message: form.message,
-       },
-     };
-
      try {
-       const res = await axios.post("https://api.emailjs.com/api/v1.0/email/send",data);
-      
-        if(res.data.toUpperCase() === "OK"){
+       const res = await axios.post(import.meta.env.VITE_URL, form,{headers: { "Content-Type": "application/json" }});
+      console.log(res)
+
+        if(res.data.ok){
            setForm((prevform)=>({...prevform, user_name:"", user_email:"", message:""}));
             alert("message sent to Zainab successful");
         }
@@ -64,7 +52,7 @@ const Contact = () => {
      } catch (error) {
 
       const err = error?.status?.toString()
-
+          
        if(err.startsWith("4") || err.startsWith("5")){
         setForm({...form, user_email:"", user_name:"", message:""})
         alert("unable to process message please try again later");
@@ -75,7 +63,7 @@ const Contact = () => {
    }
    
   return (
-    <div className="dark:bg-gray-800 border bg-[#d5dff2]">
+    <div className="dark:bg-gray-800 border  bg-[#d5dff2] h-[37rem]">
       <div className="w-[98%]  min-h-[32rem] m-auto bg-[#3c527d] my-6 rounded-xl shadow-xl shadow-[#3c527d] text-[#cbd8f1] font-[Oswald] flex gap-4 flex-col justify-center items-center">
         <div className="w-[80%] h-[85%] shadow-md shadow-[#3c527d] p-4 dark:bg-gray-800 bg-[#cbd8f1] rounded-2xl flex justify-around">
           <div className="w-[40%] p-4 hidden md:block">
@@ -111,7 +99,6 @@ const Contact = () => {
                 onChange={handleForm}
                 required
                 type="email"
-                pattern="/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/"
                 placeholder="email"
                 className="w-[80%] md:w-[70%] h-[2.5rem] rounded-xl p-2 outline-[#825621]"
                 name="user_email"
