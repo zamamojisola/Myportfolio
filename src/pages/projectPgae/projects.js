@@ -5,7 +5,7 @@ export const projectList = [
   { id: 1, image: contentApi, 
     preview:"The E-coomerce backend manages user onboarding, products and cart management, order processes, while ensuring authorized access while using the app. ",
     link: "https://github.com/zamamojisola/alanizaneyserver",
-    title:"Al-anizaneyBackend"
+    title:"Al-anizaney Backend"
   },
   { id: 2, image: paysimg, 
     preview:"The web application allows user to sign-up and verify their email in order to buy internet data and airtime from their wallet or other payment means.",
